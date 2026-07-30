@@ -1,48 +1,147 @@
 #include <stdio.h>
 
 #include "graph.h"
+#include "traversal.h"
 #include "mst.h"
 
 int main(void)
 {
     Graph graph;
-    Graph mst;
+    int command;
 
     initializeGraph(&graph, "G");
 
-    addVertex(&graph, "A");
-    addVertex(&graph, "B");
-    addVertex(&graph, "C");
-    addVertex(&graph, "D");
-    addVertex(&graph, "E");
+    while (scanf("%d", &command) == 1) {
 
-    addEdge(&graph, "A", "B", 2);
-    addEdge(&graph, "A", "C", 3);
-    addEdge(&graph, "B", "C", 1);
-    addEdge(&graph, "B", "D", 4);
-    addEdge(&graph, "C", "D", 5);
-    addEdge(&graph, "C", "E", 6);
-    addEdge(&graph, "D", "E", 7);
+        if (command == 1) {
+            char name[MAX_NAME_LENGTH + 1];
 
-    printf("Original Graph:\n");
-    printGraph(&graph);
+            if (scanf("%256s", name) == 1) {
+                addVertex(&graph, name);
+            }
+        }
 
-    printf("\n");
+        else if (command == 2) {
+            char name1[MAX_NAME_LENGTH + 1];
+            char name2[MAX_NAME_LENGTH + 1];
+            int weight;
 
-    if (createMinimumSpanningTree(&graph, &mst)) {
-        printf("Minimum Spanning Tree:\n");
-        printGraph(&mst);
+            if (scanf("%256s %256s %d",
+                      name1,
+                      name2,
+                      &weight) == 3) {
 
-        printf(
-            "Total MST Weight: %d\n",
-            getTotalWeight(&mst)
-        );
+                addEdge(
+                    &graph,
+                    name1,
+                    name2,
+                    weight
+                );
+            }
+        }
 
-        freeGraph(&mst);
-    } else {
-        printf(
-            "Minimum Spanning Tree cannot be created.\n"
-        );
+        else if (command == 3) {
+            char name[MAX_NAME_LENGTH + 1];
+            int degree;
+
+            if (scanf("%256s", name) == 1) {
+                degree = getDegree(&graph, name);
+                printf("%d\n", degree);
+            }
+        }
+
+        else if (command == 4) {
+            char name1[MAX_NAME_LENGTH + 1];
+            char name2[MAX_NAME_LENGTH + 1];
+
+            if (scanf("%256s %256s",
+                      name1,
+                      name2) == 2) {
+
+                printf(
+                    "%d\n",
+                    edgeExists(
+                        &graph,
+                        name1,
+                        name2
+                    )
+                );
+            }
+        }
+
+        else if (command == 5) {
+            char name[MAX_NAME_LENGTH + 1];
+
+            if (scanf("%256s", name) == 1) {
+                breadthFirstSearch(
+                    &graph,
+                    name
+                );
+            }
+        }
+
+        else if (command == 6) {
+            char name[MAX_NAME_LENGTH + 1];
+
+            if (scanf("%256s", name) == 1) {
+                depthFirstSearch(
+                    &graph,
+                    name
+                );
+            }
+        }
+
+        else if (command == 7) {
+            char name1[MAX_NAME_LENGTH + 1];
+            char name2[MAX_NAME_LENGTH + 1];
+
+            if (scanf("%256s %256s",
+                      name1,
+                      name2) == 2) {
+
+                printf(
+                    "%d\n",
+                    pathExists(
+                        &graph,
+                        name1,
+                        name2
+                    )
+                );
+            }
+        }
+
+        else if (command == 8) {
+            Graph mst;
+
+            if (createMinimumSpanningTree(
+                    &graph,
+                    &mst)) {
+
+                printGraph(&mst);
+                freeGraph(&mst);
+            }
+        }
+
+        else if (command == 9) {
+            /*
+             * BONUS: Shortest Path
+             *
+             * The two names are still read so the input
+             * stream remains synchronized.
+             */
+            char name1[MAX_NAME_LENGTH + 1];
+            char name2[MAX_NAME_LENGTH + 1];
+
+            scanf("%256s %256s", name1, name2);
+        }
+
+        else if (command == 10) {
+            printGraph(&graph);
+        }
+
+        else if (command == 11) {
+            break;
+        }
     }
 
     freeGraph(&graph);

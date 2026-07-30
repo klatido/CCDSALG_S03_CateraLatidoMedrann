@@ -61,7 +61,6 @@ int breadthFirstSearch(Graph *graph, const char *startName)
     int vertexCount;
     int currentIndex;
     int neighborIndex;
-    int firstPrinted = 1;
     Queue queue;
 
     start = findVertex(graph, startName);
@@ -92,12 +91,7 @@ int breadthFirstSearch(Graph *graph, const char *startName)
     while (!isQueueEmpty(&queue)) {
         current = dequeue(&queue);
 
-        if (!firstPrinted) {
-            printf(" ");
-        }
-
-        printf("%s", current->name);
-        firstPrinted = 0;
+        printf("%s\n", current->name);
 
         edge = current->edges;
 
@@ -117,7 +111,6 @@ int breadthFirstSearch(Graph *graph, const char *startName)
         }
     }
 
-    printf("\n");
 
     free(visited);
     free(vertices);
@@ -138,7 +131,6 @@ int depthFirstSearch(Graph *graph, const char *startName)
     int neighborIndex;
     int neighborCount;
     int i;
-    int firstPrinted = 1;
     Stack stack;
 
     start = findVertex(graph, startName);
@@ -181,12 +173,7 @@ int depthFirstSearch(Graph *graph, const char *startName)
 
         visited[currentIndex] = 1;
 
-        if (!firstPrinted) {
-            printf(" ");
-        }
-
-        printf("%s", current->name);
-        firstPrinted = 0;
+        printf("%s\n", current->name);
 
         /*
          * The adjacency list is alphabetical.
@@ -215,8 +202,7 @@ int depthFirstSearch(Graph *graph, const char *startName)
         }
     }
 
-    printf("\n");
-
+    
     free(neighbors);
     free(visited);
     free(vertices);
