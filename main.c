@@ -3,6 +3,7 @@
 #include "graph.h"
 #include "traversal.h"
 #include "mst.h"
+#include "shortpathb.h"
 
 int main(void)
 {
@@ -118,21 +119,30 @@ int main(void)
                     &mst)) {
 
                 printGraph(&mst);
+
+                printf(
+                    "Total Edge Weight: %d\n",
+                    getTotalWeight(&mst)
+                );
+
                 freeGraph(&mst);
             }
         }
 
         else if (command == 9) {
-            /*
-             * BONUS: Shortest Path
-             *
-             * The two names are still read so the input
-             * stream remains synchronized.
-             */
             char name1[MAX_NAME_LENGTH + 1];
             char name2[MAX_NAME_LENGTH + 1];
 
-            scanf("%256s %256s", name1, name2);
+            if (scanf("%256s %256s",
+                    name1,
+                    name2) == 2) {
+
+                printShortestPath(
+                    &graph,
+                    name1,
+                    name2
+                );
+            }
         }
 
         else if (command == 10) {
