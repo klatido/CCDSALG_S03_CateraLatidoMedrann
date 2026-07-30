@@ -1,28 +1,36 @@
 #include <stdio.h>
 
 #include "graph.h"
-#include "queue.h"
+#include "traversal.h"
 
 int main(void)
 {
     Graph graph;
-    Queue queue;
 
     initializeGraph(&graph, "G");
 
-    addVertex(&graph, "Ken");
     addVertex(&graph, "Alek");
+    addVertex(&graph, "Henry");
+    addVertex(&graph, "Ken");
     addVertex(&graph, "Tristan");
+    addVertex(&graph, "Kayenne");
 
-    initializeQueue(&queue);
+    addEdge(&graph, "Alek", "Henry", 15);
+    addEdge(&graph, "Alek", "Ken", 10);
+    addEdge(&graph, "Henry", "Tristan", 5);
+    addEdge(&graph, "Ken", "Tristan", 20);
 
-    enqueue(&queue, findVertex(&graph, "Ken"));
-    enqueue(&queue, findVertex(&graph, "Alek"));
-    enqueue(&queue, findVertex(&graph, "Tristan"));
+    printf("BFS from Alek: ");
+    breadthFirstSearch(&graph, "Alek");
 
-    printf("%s\n", dequeue(&queue)->name);
-    printf("%s\n", dequeue(&queue)->name);
-    printf("%s\n", dequeue(&queue)->name);
+    printf("DFS from Alek: ");
+    depthFirstSearch(&graph, "Alek");
+
+    printf("Path from Alek to Tristan: %d\n",
+           pathExists(&graph, "Alek", "Tristan"));
+
+    printf("Path from Alek to Kayenne: %d\n",
+           pathExists(&graph, "Alek", "Kayenne"));
 
     freeGraph(&graph);
 
