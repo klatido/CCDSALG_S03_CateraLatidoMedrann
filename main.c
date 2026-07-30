@@ -1,36 +1,49 @@
 #include <stdio.h>
 
 #include "graph.h"
-#include "traversal.h"
+#include "mst.h"
 
 int main(void)
 {
     Graph graph;
+    Graph mst;
 
     initializeGraph(&graph, "G");
 
-    addVertex(&graph, "Alek");
-    addVertex(&graph, "Henry");
-    addVertex(&graph, "Ken");
-    addVertex(&graph, "Tristan");
-    addVertex(&graph, "Kayenne");
+    addVertex(&graph, "A");
+    addVertex(&graph, "B");
+    addVertex(&graph, "C");
+    addVertex(&graph, "D");
+    addVertex(&graph, "E");
 
-    addEdge(&graph, "Alek", "Henry", 15);
-    addEdge(&graph, "Alek", "Ken", 10);
-    addEdge(&graph, "Henry", "Tristan", 5);
-    addEdge(&graph, "Ken", "Tristan", 20);
+    addEdge(&graph, "A", "B", 2);
+    addEdge(&graph, "A", "C", 3);
+    addEdge(&graph, "B", "C", 1);
+    addEdge(&graph, "B", "D", 4);
+    addEdge(&graph, "C", "D", 5);
+    addEdge(&graph, "C", "E", 6);
+    addEdge(&graph, "D", "E", 7);
 
-    printf("BFS from Alek: ");
-    breadthFirstSearch(&graph, "Alek");
+    printf("Original Graph:\n");
+    printGraph(&graph);
 
-    printf("DFS from Alek: ");
-    depthFirstSearch(&graph, "Alek");
+    printf("\n");
 
-    printf("Path from Alek to Tristan: %d\n",
-           pathExists(&graph, "Alek", "Tristan"));
+    if (createMinimumSpanningTree(&graph, &mst)) {
+        printf("Minimum Spanning Tree:\n");
+        printGraph(&mst);
 
-    printf("Path from Alek to Kayenne: %d\n",
-           pathExists(&graph, "Alek", "Kayenne"));
+        printf(
+            "Total MST Weight: %d\n",
+            getTotalWeight(&mst)
+        );
+
+        freeGraph(&mst);
+    } else {
+        printf(
+            "Minimum Spanning Tree cannot be created.\n"
+        );
+    }
 
     freeGraph(&graph);
 
