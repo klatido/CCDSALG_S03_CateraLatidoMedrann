@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 #include "graph.h"
-#include "stack.h"
+#include "queue.h"
 
 int main(void)
 {
     Graph graph;
-    Stack stack;
+    Queue queue;
 
     initializeGraph(&graph, "G");
 
@@ -14,15 +14,15 @@ int main(void)
     addVertex(&graph, "Alek");
     addVertex(&graph, "Tristan");
 
-    initializeStack(&stack);
+    initializeQueue(&queue);
 
-    push(&stack, findVertex(&graph, "Ken"));
-    push(&stack, findVertex(&graph, "Alek"));
-    push(&stack, findVertex(&graph, "Tristan"));
+    enqueue(&queue, findVertex(&graph, "Ken"));
+    enqueue(&queue, findVertex(&graph, "Alek"));
+    enqueue(&queue, findVertex(&graph, "Tristan"));
 
-    printf("%s\n", pop(&stack)->name);
-    printf("%s\n", pop(&stack)->name);
-    printf("%s\n", pop(&stack)->name);
+    printf("%s\n", dequeue(&queue)->name);
+    printf("%s\n", dequeue(&queue)->name);
+    printf("%s\n", dequeue(&queue)->name);
 
     freeGraph(&graph);
 
