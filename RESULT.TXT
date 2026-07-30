@@ -1,19 +1,153 @@
 2
+4
+4
+4
+4
+4
 3
-4
-4
-4
-4
-4
-4
-4
-4
+3
+2
+3
+2
+3
+2
+2
+2
+1
+0
+1
+1
+1
+1
+1
 1
 0
 1
 0
 1
+1
+1
 0
+A
+B
+C
+D
+H
+E
+F
+G
+I
+L
+J
+K
+M
+O
+N
+B
+A
+C
+D
+H
+E
+F
+G
+I
+L
+J
+K
+M
+O
+N
+D
+B
+C
+E
+F
+A
+H
+G
+L
+I
+K
+M
+J
+N
+O
+F
+D
+E
+G
+L
+B
+C
+H
+K
+M
+A
+I
+J
+N
+O
+H
+B
+G
+I
+A
+C
+D
+E
+F
+J
+L
+K
+O
+M
+N
+J
+I
+K
+O
+H
+L
+N
+B
+G
+F
+M
+A
+C
+D
+E
+L
+F
+K
+M
+D
+E
+G
+J
+N
+B
+C
+H
+I
+O
+A
+O
+J
+N
+I
+K
+M
+H
+L
+B
+G
+F
+A
+C
+D
+E
 A
 B
 C
@@ -29,14 +163,9 @@ L
 M
 N
 O
-P
-Q
-R
-S
-T
+C
 A
 B
-C
 D
 E
 F
@@ -49,59 +178,108 @@ L
 M
 N
 O
-P
-Q
-R
-S
-T
+E
+C
+A
+B
+D
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+G
+E
+C
+A
+B
+D
+F
+L
+K
+J
+I
+H
+O
+N
+M
+I
+H
+B
+A
+C
+D
+E
+F
+G
+L
+K
+J
+O
+N
+M
+K
+J
+I
+H
+B
+A
+C
+D
+E
+F
+G
+L
+M
+N
+O
+M
+L
+F
+D
+B
+A
+C
+E
+G
+H
+I
+J
+K
+O
+N
+O
+J
+I
+H
+B
+A
+C
+D
+E
+F
+G
+L
+K
+M
+N
 1
 1
 1
 1
 1
-G = (V,E)
-V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T}
-E = {
-(A, B, 4),
-(A, C, 2),
-(B, C, 1),
-(B, D, 5),
-(C, D, 8),
-(C, E, 10),
-(D, E, 2),
-(D, F, 6),
-(E, F, 3),
-(E, G, 7),
-(F, G, 1),
-(F, H, 4),
-(G, H, 2),
-(G, I, 9),
-(H, I, 3),
-(H, J, 5),
-(I, J, 1),
-(I, K, 6),
-(J, K, 2),
-(J, L, 8),
-(K, L, 4),
-(K, M, 7),
-(L, M, 3),
-(L, N, 5),
-(M, N, 1),
-(M, O, 6),
-(N, O, 2),
-(N, P, 4),
-(O, P, 3),
-(O, Q, 8),
-(P, Q, 1),
-(P, R, 7),
-(Q, R, 2),
-(Q, S, 5),
-(R, S, 3),
-(R, T, 6),
-(S, T, 1)
-}
+1
+1
+1
+1
+1
 MST = (V,E)
-V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T}
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
 E = {
 (A, C, 2),
 (B, C, 1),
@@ -109,50 +287,53 @@ E = {
 (D, E, 2),
 (E, F, 3),
 (F, G, 1),
-(G, H, 2),
-(H, I, 3),
-(I, J, 1),
-(J, K, 2),
-(K, L, 4),
-(L, M, 3),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(K, L, 2),
+(L, M, 4),
 (M, N, 1),
-(N, O, 2),
-(O, P, 3),
-(P, Q, 1),
-(Q, R, 2),
-(R, S, 3),
-(S, T, 1)
+(N, O, 6)
 }
-0
-0
--1
-0
-0
-1
-1
-1
-0
-1
-0
-U
-V
-W
-X
-Y
-Z
-U
-V
-W
-X
-Y
-Z
+Total Edge Weight: 41
+MST = (V,E)
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
+E = {
+(A, C, 2),
+(B, C, 1),
+(B, D, 5),
+(D, E, 2),
+(E, F, 3),
+(F, G, 1),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(K, L, 2),
+(L, M, 4),
+(M, N, 1),
+(N, O, 6)
+}
+Total Edge Weight: 41
+A -> C -> B -> H -> I -> J -> O; Total edge cost = 29
+A -> C -> B -> D -> E -> F -> L; Total edge cost = 21
+B -> D -> E -> F -> L -> M -> N; Total edge cost = 23
+C -> B -> D -> E -> F -> L -> K; Total edge cost = 21
+D -> E -> F -> G -> H -> I -> J -> O; Total edge cost = 24
+E -> F -> L -> M; Total edge cost = 15
+F -> G -> H -> I -> J; Total edge cost = 10
+G -> H -> I -> J -> O; Total edge cost = 18
+H -> I -> J -> K -> L; Total edge cost = 12
+I -> J -> K -> L -> M -> N; Total edge cost = 15
 G = (V,E)
-V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z}
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
 E = {
 (A, B, 4),
 (A, C, 2),
 (B, C, 1),
 (B, D, 5),
+(B, H, 12),
 (C, D, 8),
 (C, E, 10),
 (D, E, 2),
@@ -160,35 +341,92 @@ E = {
 (E, F, 3),
 (E, G, 7),
 (F, G, 1),
-(F, H, 4),
-(G, H, 2),
-(G, I, 9),
-(H, I, 3),
-(H, J, 5),
-(I, J, 1),
-(I, K, 6),
-(J, K, 2),
-(J, L, 8),
-(K, L, 4),
-(K, M, 7),
-(L, M, 3),
-(L, N, 5),
+(F, L, 8),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(J, O, 9),
+(K, L, 2),
+(L, M, 4),
 (M, N, 1),
-(M, O, 6),
-(N, O, 2),
-(N, P, 4),
-(O, P, 3),
-(O, Q, 8),
-(P, Q, 1),
-(P, R, 7),
-(Q, R, 2),
-(Q, S, 5),
-(R, S, 3),
-(R, T, 6),
-(S, T, 1),
-(U, V, 2),
-(V, W, 3),
-(W, X, 4),
-(X, Y, 5),
-(Y, Z, 6)
+(N, O, 6)
+}
+G = (V,E)
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
+E = {
+(A, B, 4),
+(A, C, 2),
+(B, C, 1),
+(B, D, 5),
+(B, H, 12),
+(C, D, 8),
+(C, E, 10),
+(D, E, 2),
+(D, F, 6),
+(E, F, 3),
+(E, G, 7),
+(F, G, 1),
+(F, L, 8),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(J, O, 9),
+(K, L, 2),
+(L, M, 4),
+(M, N, 1),
+(N, O, 6)
+}
+G = (V,E)
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
+E = {
+(A, B, 4),
+(A, C, 2),
+(B, C, 1),
+(B, D, 5),
+(B, H, 12),
+(C, D, 8),
+(C, E, 10),
+(D, E, 2),
+(D, F, 6),
+(E, F, 3),
+(E, G, 7),
+(F, G, 1),
+(F, L, 8),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(J, O, 9),
+(K, L, 2),
+(L, M, 4),
+(M, N, 1),
+(N, O, 6)
+}
+G = (V,E)
+V = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O}
+E = {
+(A, B, 4),
+(A, C, 2),
+(B, C, 1),
+(B, D, 5),
+(B, H, 12),
+(C, D, 8),
+(C, E, 10),
+(D, E, 2),
+(D, F, 6),
+(E, F, 3),
+(E, G, 7),
+(F, G, 1),
+(F, L, 8),
+(G, H, 4),
+(H, I, 2),
+(I, J, 3),
+(J, K, 5),
+(J, O, 9),
+(K, L, 2),
+(L, M, 4),
+(M, N, 1),
+(N, O, 6)
 }

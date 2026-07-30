@@ -13,11 +13,6 @@
 1 M
 1 N
 1 O
-1 P
-1 Q
-1 R
-1 S
-1 T
 2 A B 4
 2 A C 2
 2 B C 1
@@ -29,32 +24,17 @@
 2 E F 3
 2 E G 7
 2 F G 1
-2 F H 4
-2 G H 2
-2 G I 9
-2 H I 3
-2 H J 5
-2 I J 1
-2 I K 6
-2 J K 2
-2 J L 8
-2 K L 4
-2 K M 7
-2 L M 3
-2 L N 5
+2 G H 4
+2 H I 2
+2 I J 3
+2 J K 5
+2 K L 2
+2 L M 4
 2 M N 1
-2 M O 6
-2 N O 2
-2 N P 4
-2 O P 3
-2 O Q 8
-2 P Q 1
-2 P R 7
-2 Q R 2
-2 Q S 5
-2 R S 3
-2 R T 6
-2 S T 1
+2 N O 6
+2 J O 9
+2 F L 8
+2 B H 12
 3 A
 3 B
 3 C
@@ -65,51 +45,66 @@
 3 H
 3 I
 3 J
+3 K
+3 L
+3 M
+3 N
+3 O
 4 A B
 4 A D
-4 F G
-4 G T
-4 S T
-4 A T
+4 B C
+4 B H
+4 C E
+4 D F
+4 E G
+4 F L
+4 G I
+4 H I
+4 I K
+4 J O
+4 K L
+4 M N
+4 A O
 5 A
+5 B
+5 D
+5 F
+5 H
+5 J
+5 L
+5 O
 6 A
-7 A T
-7 B Q
-7 C R
-7 D S
-7 E P
-10
+6 C
+6 E
+6 G
+6 I
+6 K
+6 M
+6 O
+7 A O
+7 A A
+7 B M
+7 C N
+7 D J
+7 E L
+7 F O
+7 G K
+7 H M
+7 I O
 8
-1 A
-2 A B 4
-2 A A 5
-2 A T 0
-2 A T 101
-2 X Y 10
-4 A A
-4 X Y
-3 X
-7 A X
-7 X Y
-1 U
-1 V
-1 W
-1 X
-1 Y
-1 Z
-2 U V 2
-2 V W 3
-2 W X 4
-2 X Y 5
-2 Y Z 6
-3 U
-3 Z
-4 U V
-4 U Z
-7 U Z
-7 A Z
-5 U
-6 U
-10
 8
+9 A O
+9 A L
+9 B N
+9 C K
+9 D O
+9 E M
+9 F J
+9 G O
+9 H L
+9 I N
+10
+10
+10
+10
 11
