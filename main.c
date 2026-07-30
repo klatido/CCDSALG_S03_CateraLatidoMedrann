@@ -1,35 +1,28 @@
 #include <stdio.h>
 
 #include "graph.h"
+#include "stack.h"
 
 int main(void)
 {
     Graph graph;
+    Stack stack;
 
     initializeGraph(&graph, "G");
 
     addVertex(&graph, "Ken");
     addVertex(&graph, "Alek");
     addVertex(&graph, "Tristan");
-    addVertex(&graph, "Henry");
 
-    addEdge(&graph, "Ken", "Alek", 10);
-    addEdge(&graph, "Ken", "Tristan", 20);
-    addEdge(&graph, "Alek", "Henry", 15);
-    addEdge(&graph, "Tristan", "Henry", 5);
+    initializeStack(&stack);
 
-    printf("Degree of Ken: %d\n", getDegree(&graph, "Ken"));
-    printf("Degree of Henry: %d\n", getDegree(&graph, "Henry"));
+    push(&stack, findVertex(&graph, "Ken"));
+    push(&stack, findVertex(&graph, "Alek"));
+    push(&stack, findVertex(&graph, "Tristan"));
 
-    printf("Ken-Alek edge: %d\n",
-           edgeExists(&graph, "Ken", "Alek"));
-
-    printf("Ken-Henry edge: %d\n",
-           edgeExists(&graph, "Ken", "Henry"));
-
-    printf("\n");
-
-    printGraph(&graph);
+    printf("%s\n", pop(&stack)->name);
+    printf("%s\n", pop(&stack)->name);
+    printf("%s\n", pop(&stack)->name);
 
     freeGraph(&graph);
 
