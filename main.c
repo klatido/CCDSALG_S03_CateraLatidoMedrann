@@ -119,12 +119,6 @@ int main(void)
                     &mst)) {
 
                 printGraph(&mst);
-
-                printf(
-                    "Total Edge Weight: %d\n",
-                    getTotalWeight(&mst)
-                );
-
                 freeGraph(&mst);
             }
         }
@@ -134,8 +128,8 @@ int main(void)
             char name2[MAX_NAME_LENGTH + 1];
 
             if (scanf("%256s %256s",
-                    name1,
-                    name2) == 2) {
+                      name1,
+                      name2) == 2) {
 
                 printShortestPath(
                     &graph,
