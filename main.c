@@ -127,16 +127,7 @@ int main(void)
             char name1[MAX_NAME_LENGTH + 1];
             char name2[MAX_NAME_LENGTH + 1];
 
-            if (scanf("%256s %256s",
-                      name1,
-                      name2) == 2) {
-
-                printShortestPath(
-                    &graph,
-                    name1,
-                    name2
-                );
-            }
+            scanf("%256s %256s", name1, name2);
         }
 
         else if (command == 10) {
